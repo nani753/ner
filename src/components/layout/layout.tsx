@@ -1,3 +1,5 @@
+"use client";
+
 import { MainNav } from './main-nav';
 import { Footer } from './footer';
 import { Toaster } from '@/components/ui/sonner';
