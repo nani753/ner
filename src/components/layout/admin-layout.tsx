@@ -18,36 +18,43 @@ const navigation = [
     name: 'Dashboard',
     href: '/admin',
     icon: LayoutGrid,
+    description: 'Overview of your content and analytics',
   },
   {
     name: 'Products',
     href: '/admin/products',
     icon: FileText,
+    description: 'Manage your product catalog',
   },
   {
     name: 'News',
     href: '/admin/news',
     icon: Newspaper,
+    description: 'Create and edit news articles',
   },
   {
     name: 'Events',
     href: '/admin/events',
     icon: Calendar,
+    description: 'Manage upcoming events',
   },
   {
     name: 'RSS Sources',
     href: '/admin/rss-sources',
     icon: RssIcon,
+    description: 'Configure RSS feed sources',
   },
   {
     name: 'Users',
     href: '/admin/users',
     icon: Users,
+    description: 'Manage user accounts',
   },
   {
     name: 'Settings',
     href: '/admin/settings',
     icon: Settings,
+    description: 'Configure system settings',
   },
 ];
 
