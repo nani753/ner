@@ -5,6 +5,9 @@ import { User } from '@/lib/models';
 import connectDB from '@/lib/db';
 
 export const authOptions: NextAuthOptions = {
+  pages: {
+    signIn: "/auth/signin",
+  },
   providers: [
     CredentialsProvider({
       name: 'credentials',
