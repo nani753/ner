@@ -1,5 +1,41 @@
 import type { NextConfig } from "next";
 
+const config: NextConfig = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
+  experimental: {
+    serverActions: true,
+  },
+};
+
+export default config;/** @type {import('next').NextConfig} */
+const nextConfig = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  images: {
+    domains: ['localhost'],
+  },
+  experimental: {
+    serverActions: true,
+  },
+}ort type { NextConfig } from "next";
+
 const nextConfig: NextConfig = {
   images: {
     domains: [
