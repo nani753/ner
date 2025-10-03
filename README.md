@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NerlumaHub
+
+A comprehensive event technology website focused on sound systems, lighting systems, and event tech.
+
+## Features
+
+- Product catalog with detailed specifications
+- Image management with drag & drop uploads
+- CSV import/export functionality
+- Admin interface for content management
+- Authentication system with admin roles
+- Image optimization and CDN support
+- Responsive design
+
+## Tech Stack
+
+- Next.js 14 with App Router
+- TypeScript
+- MongoDB with Mongoose
+- NextAuth.js for authentication
+- TailwindCSS & Shadcn/UI
+- Sonner for toast notifications
+- React Hook Form with Zod validation
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
+- Node.js 18.17 or later
+- MongoDB database
+- npm or yarn
+
+### Local Development
+
+1. Install dependencies:
+\`\`\`bash
+npm install
+\`\`\`
+
+2. Copy the environment variables file and update it:
+\`\`\`bash
+cp .env.example .env.local
+\`\`\`
+
+3. Update the environment variables in \`.env.local\` with your values.
+
+4. Run the development server:
+\`\`\`bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Production Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Create a new project on [Vercel](https://vercel.com)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Set up environment variables in Vercel's dashboard:
+   - Add all variables from \`.env.example\`
+   - Generate a secure \`NEXTAUTH_SECRET\` using \`openssl rand -base64 32\`
+   - Set \`NEXTAUTH_URL\` to your production domain
 
-## Learn More
+3. Configure your MongoDB database:
+   - Set up network access for Vercel's IP ranges
+   - Use MongoDB Atlas for production
+   - Update \`MONGODB_URI\` with production credentials
 
-To learn more about Next.js, take a look at the following resources:
+4. Deploy to Vercel:
+   - Connect your GitHub repository
+   - Configure build settings
+   - Deploy the project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Post-Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Set up your first admin user:
+   - Update \`ADMIN_EMAIL\` and \`ADMIN_PASSWORD\` in environment variables
+   - Access \`/admin\` and log in with these credentials
+   - Change password after first login
 
-## Deploy on Vercel
+2. Configure file uploads:
+   - For local storage: Ensure \`public/uploads\` directory exists
+   - For S3: Configure AWS credentials in environment variables
+   - For Cloudinary: Set up Cloudinary credentials
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Set up monitoring and analytics:
+   - Add Google Analytics ID
+   - Configure Meta Pixel for conversion tracking
+   - Set up error monitoring (e.g., Sentry)
