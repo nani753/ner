@@ -7,8 +7,11 @@ export const metadata: Metadata = {
 
 async function getArticles() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/news`, {
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const res = await fetch(`${baseUrl}/api/news`, {
       next: { revalidate: 3600 }, // Revalidate every hour
+      cache: 'force-cache',
+      signal: AbortSignal.timeout(30000), // 30 second timeout
     });
     if (!res.ok) throw new Error('Failed to fetch articles');
     return res.json();
